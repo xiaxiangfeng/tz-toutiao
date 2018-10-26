@@ -1,0 +1,36 @@
+{
+  "name": "hello-next",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "start": "next start",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "isomorphic-unfetch": "^3.0.0",
+    "react": "^16.5.2",
+    "react-dom": "^16.5.2",
+    "react-redux": "^5.0.7",
+    "redux": "^4.0.1",
+    "redux-thunk": "^2.3.0"
+  },
+  "devDependencies": {
+    "@zeit/next-sass": "^1.0.1",
+    "autoprefixer": "^9.3.0",
+    "babel-plugin-react-css-modules": "^3.4.2",
+    "babel-plugin-transform-assets": "^1.0.2",
+    "next": "^7.0.2",
+    "node-sass": "^4.9.4",
+    "postcss-css-variables": "^0.11.0",
+    "postcss-import": "^12.0.1",
+    "postcss-scss": "^2.0.0",
+    "postcss-url": "^8.0.0",
+    "redux-devtools-extension": "^2.13.5"
+  }
+}
