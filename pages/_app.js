@@ -6,7 +6,7 @@ import './_app.scss'
 
 class MyApp extends App {
   render () {
-    const {Component, pageProps, reduxStore} = this.props
+    const { Component, pageProps, reduxStore } = this.props
     return (
       <Container>
         <Provider store={reduxStore}>
