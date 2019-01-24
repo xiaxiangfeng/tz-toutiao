@@ -1,17 +1,24 @@
+const withCSS = require('@zeit/next-css')
 const withSass = require('@zeit/next-sass')
 const path = require('path')
 
-function resolve (dir) {
+// fix: prevents error when .css files are required by node
+if (typeof require !== 'undefined') {
+  // eslint-disable-next-line
+  require.extensions['.css'] = file => {}
+}
+
+function resolve(dir) {
   return path.join(__dirname, '.', dir)
 }
 
-module.exports = withSass({
+const withSassRes = withSass({
   cssModules: true,
   cssLoaderOptions: {
     importLoaders: 2,
     localIdentName: '[name]__[local]___[hash:base64:5]'
   },
-  webpack (config) {
+  webpack(config) {
     config.module.rules.unshift({
       test: /\.(js)$/,
       loader: 'eslint-loader',
@@ -28,6 +35,11 @@ module.exports = withSass({
         emitWarning: true
       }
     })
+
     return config
   }
 })
+
+withSassRes.cssModules = false
+
+module.exports = withCSS(withSassRes)
